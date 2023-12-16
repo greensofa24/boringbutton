@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Boring Button</title>
+</head>
+<body>
+<h1>Boring webpage</h1>
+<script>
+var number = 0;
+var er = 0;
+var est = 0;
+var very = 0;
+var extremely = 0;
+var more = 0;
+var even = 0;
+</script>
+<button onclick="number += 1;
+
+if (number % 3125 == 0) {
+even += 1;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 625 == 0) {
+more += 1;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 125 == 0) {
+extremely += 1;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 25 == 0) {
+very += 1;
+est -= 4;
+er -= 4;
+
+} else if (number % 5 == 0) {
+est += 1;
+er -= 4;
+
+} else {
+er += 1;
+}
+
+let eradd = '';
+let i = 0;
+while (i < er) {
+eradd += '-er';
+i++;
+}
+
+let estadd = '';
+i = 0;
+while (i < est) {
+estadd += '-est';
+i++;
+}
+
+let veryadd = '';
+i = 0;
+while (i < very) {
+veryadd += 'very ';
+i++;
+}
+
+let extremelyadd = '';
+i = 0;
+while (i < extremely) {
+extremelyadd += 'extremely ';
+i++;
+}
+
+let moreadd = '';
+i = 0;
+while (i < more) {
+moreadd += 'more ';
+i++;
+}
+
+let evenadd = '';
+i = 0;
+while (i < even) {
+evenadd += 'even ';
+i++;
+}
+
+let boringness = evenadd + moreadd + extremelyadd + veryadd + 'boring' + estadd + eradd + ' button';
+this.innerText = boringness.charAt(0).toUpperCase() + boringness.slice(1);">Boring button</button>
+</body>
+</html>
