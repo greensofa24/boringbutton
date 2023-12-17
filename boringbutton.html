@@ -79,10 +79,14 @@ let boringness = evenadd + moreadd + extremelyadd + veryadd + 'boring' + ingadd 
 document.getElementById('button').innerText = boringness.charAt(0).toUpperCase() + boringness.slice(1);
 }
 
+function m() {
+document.querySelector("h2").innerText = "$" + money;
+}
+
 function sell(a, b) {
 money += a;
 number -= b;
-document.querySelector("h2").innerText = "$" + money;
+m();
 }
 
 setInterval(function(){let i = 0;
@@ -178,10 +182,14 @@ update();">Boring button</button>
 
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
-<button onclick="if(money >= 12) {
+<button onclick="if(money >= 12 * ac + 12) {
 money -= 12;
 ac += 1;
+this.innerText = 'Buy an autoclicker (Cost: ' + (12 * ac + 12) + ')'
+document.getElementById('ac').innerText = 'You have: ' + ac;
+m();
 }">Buy an autoclicker (Cost: 12)</button>
+<p id="ac">You have: 0</p>
 
 </body>
 </html>
