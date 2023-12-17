@@ -24,6 +24,7 @@ var more = 0;
 var even = 0;
 var ing = 0;
 var ac = 0;
+var acs = 1;
 
 function update() {
 let eradd = '';
@@ -93,7 +94,7 @@ setInterval(function(){let i = 0;
 while (i < ac) {
 document.getElementById('button').click();
 i++;
-}}, 1000);
+}}, 1000 / acs);
 </script>
 
 <button onclick="if(er) {
@@ -183,13 +184,22 @@ update();">Boring button</button>
 <br><br>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
 <button onclick="if(money >= 12 * ac + 12) {
-money -= 12;
+money -= 12 * ac + 12;
 ac += 1;
 this.innerText = 'Buy an autoclicker (Cost: ' + (12 * ac + 12) + ')'
 document.getElementById('ac').innerText = 'You have: ' + ac;
 m();
 }">Buy an autoclicker (Cost: 12)</button>
+
+<button onclick="if(money >= 120 * 2 ** (acs - 1)) {
+money -= 120 * 2 ** (acs - 1);
+acs *= 2;
+this.innerText = 'x2 CPS (Cost: ' + (120 * 2 ** (acs - 1)) + ')'
+document.getElementById('ac').innerText = 'Current CPS per autoclicker: ' + acs;
+m();
+}">x2 CPS (Cost: 120)</button>
 <p id="ac">You have: 0</p>
+<p id="ac">Current CPS per autoclicker: 1</p>
 
 </body>
 </html>
