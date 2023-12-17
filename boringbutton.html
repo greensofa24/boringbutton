@@ -3,10 +3,18 @@
 <head>
 <meta charset="utf-8">
 <title>Boring Button</title>
+<style>
+tbr {
+display: block;
+margin-top: 7.5px;
+}
+</style>
 </head>
 <body>
 <h1>Boring webpage</h1>
+<h2>$0</h2>
 <script>
+var money = 0;
 var number = 0;
 var er = 0;
 var est = 0;
@@ -14,43 +22,10 @@ var very = 0;
 var extremely = 0;
 var more = 0;
 var even = 0;
-</script>
-<button onclick="number += 1;
+var ing = 0;
+var ac = 0;
 
-if (number % 3125 == 0) {
-even += 1;
-more -= 4;
-extremely -= 4;
-very -= 4;
-est -= 4;
-er -= 4;
-
-} else if (number % 625 == 0) {
-more += 1;
-extremely -= 4;
-very -= 4;
-est -= 4;
-er -= 4;
-
-} else if (number % 125 == 0) {
-extremely += 1;
-very -= 4;
-est -= 4;
-er -= 4;
-
-} else if (number % 25 == 0) {
-very += 1;
-est -= 4;
-er -= 4;
-
-} else if (number % 5 == 0) {
-est += 1;
-er -= 4;
-
-} else {
-er += 1;
-}
-
+function update() {
 let eradd = '';
 let i = 0;
 while (i < er) {
@@ -93,7 +68,120 @@ evenadd += 'even ';
 i++;
 }
 
-let boringness = evenadd + moreadd + extremelyadd + veryadd + 'boring' + estadd + eradd + ' button';
-this.innerText = boringness.charAt(0).toUpperCase() + boringness.slice(1);">Boring button</button>
+let ingadd = '';
+i = 0;
+while (i < ing) {
+ingadd += '-ing';
+i++;
+}
+
+let boringness = evenadd + moreadd + extremelyadd + veryadd + 'boring' + ingadd + estadd + eradd + ' button';
+document.getElementById('button').innerText = boringness.charAt(0).toUpperCase() + boringness.slice(1);
+}
+
+function sell(a, b) {
+money += a;
+number -= b;
+document.querySelector("h2").innerText = "$" + money;
+}
+
+setInterval(function(){let i = 0;
+while (i < ac) {
+document.getElementById('button').click();
+i++;
+}}, 1000);
+</script>
+
+<button onclick="if(er) {
+sell(1, 1);
+er -= 1;
+update();
+}">Sell an -er</button>
+<button onclick="if(est) {
+sell(6, 5);
+est -= 1;
+update();
+}">Sell an -est</button>
+<button onclick="if(very) {
+sell(36, 25);
+very -= 1;
+update();
+}">Sell a very</button>
+<button onclick="if(extremely) {
+sell(216, 125);
+extremely -= 1;
+update();
+}">Sell an extremely</button>
+<button onclick="if(more) {
+sell(1296, 625);
+more -= 1;
+update();
+}">Sell a more</button>
+<button onclick="if(even) {
+sell(7776, 3125);
+even -= 1;
+update();
+}">Sell an even</button>
+<button onclick="if(ing) {
+sell(46656, 15625);
+ing -= 1;
+update();
+}">Sell an -ing</button>
+
+<tbr/>
+<button id="button" onclick="number += 1;
+
+if (number % 15625 == 0) {
+ing += 1;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 3125 == 0) {
+even += 1;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 625 == 0) {
+more += 1;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 125 == 0) {
+extremely += 1;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 25 == 0) {
+very += 1;
+est -= 4;
+er -= 4;
+
+} else if (number % 5 == 0) {
+est += 1;
+er -= 4;
+
+} else {
+er += 1;
+}
+
+update();">Boring button</button>
+
+<br><br>
+<img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
+<button onclick="if(money >= 12) {
+money -= 12;
+ac += 1;
+}">Buy an autoclicker (Cost: 12)</button>
+
 </body>
 </html>
