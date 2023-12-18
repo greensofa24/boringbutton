@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Boring Button</title>
+<style>
+tbr {
+display: block;
+margin-top: 7.5px;
+}
+</style>
+</head>
+<body>
+<h1>Boring webpage</h1>
+<h2>$0</h2>
+<script>
+var money = 0;
+var number = 0;
+var er = 0;
+var est = 0;
+var very = 0;
+var extremely = 0;
+var more = 0;
+var even = 0;
+var ing = 0;
+var too = 0;
+var way = 0;
+var ac = 0;
+var acs = 1;
+var al = 1;
+var als = 0;
+
+var acint = setInterval(function(){let i = 0;
+while (i < ac * al) {
+document.getElementById('button').click();
+i++;
+}}, 1000 / acs);
+
+var alint = setInterval(function(){let i = 0;
+while (i < al) {
+al += als;
+i++;
+}}, 1000 / als);
+
+function rd(n) {
+var s = String(n);
+if (s.indexOf(".") == -1) {
+s += ".";
+}
+s += "00";
+return parseFloat(s.substring(0, s.indexOf(".") + 3));
+}
+function f(n) {
+if (n >= 1e3 && n < 1e6) return rd(n / 1e3) + "K";
+if (n >= 1e6 && n < 1e9) return rd(n / 1e6) + "M";
+if (n >= 1e9 && n < 1e12) return rd(n / 1e9) + "B";
+if (n >= 1e12 && n < 1e15) return rd(n / 1e12) + "T";
+if (n >= 1e15 && n < 1e18) return rd(n / 1e15) + "Qa";
+if (n >= 1e18 && n < 1e21) return rd(n / 1e18) + "Qu";
+if (n >= 1e21 && n < 1e24) return rd(n / 1e21) + "Sx";
+if (n >= 1e24 && n < 1e27) return rd(n / 1e24) + "Sp";
+if (n >= 1e27 && n < 1e30) return rd(n / 1e27) + "O";
+if (n >= 1e30 && n < 1e33) return rd(n / 1e30) + "N";
+if (n >= 1e33 && n < 1e36) return rd(n / 1e33) + "D";
+return n;
+};
+
+function update() {
+document.getElementById("button").innerText = "";
+
+let i = 0;
+while (i < way) {
+a = document.createElement("span");
+a.innerText = "way ";
+a.style.color = "magenta";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < too) {
+a = document.createElement("span");
+a.innerText = "too ";
+a.style.color = "#cb44f8";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < even) {
+a = document.createElement("span");
+a.innerText = "even ";
+a.style.color = "dodgerblue";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < more) {
+a = document.createElement("span");
+a.innerText = "more ";
+a.style.color = "darkturquoise";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < extremely) {
+a = document.createElement("span");
+a.innerText = "extremely ";
+a.style.color = "limegreen";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < very) {
+a = document.createElement("span");
+a.innerText = "very ";
+a.style.color = "yellow";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+a = document.createElement("span");
+a.innerText = "boring";
+document.getElementById("button").appendChild(a);
+
+i = 0;
+while (i < ing) {
+a = document.createElement("span");
+a.innerText = "-ing";
+a.style.color = "#9040ff";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < est) {
+a = document.createElement("span");
+a.innerText = "-est";
+a.style.color = "orange";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < er) {
+a = document.createElement("span");
+a.innerText = "-er";
+a.style.color = "red";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+document.getElementById("button").firstChild.innerText = 
+document.getElementById("button").firstChild.innerText.charAt(0).toUpperCase() + document.getElementById("button").firstChild.innerText.slice(1);
+
+a = document.createElement("span");
+a.innerText = " button";
+document.getElementById("button").appendChild(a);
+
+}
+
+function m() {
+document.querySelector("h2").innerText = "$" + f(money);
+}
+
+function sell(a, b) {
+money += a;
+number -= b;
+m();
+}
+</script>
+
+<button onclick="if(er) {
+sell(1, 1);
+er -= 1;
+update();
+}">Sell an -er</button>
+<button onclick="if(est) {
+sell(6, 5);
+est -= 1;
+update();
+}">Sell an -est</button>
+<button onclick="if(very) {
+sell(36, 25);
+very -= 1;
+update();
+}">Sell a very</button>
+<button onclick="if(extremely) {
+sell(216, 125);
+extremely -= 1;
+update();
+}">Sell an extremely</button>
+<button onclick="if(more) {
+sell(1296, 625);
+more -= 1;
+update();
+}">Sell a more</button>
+<button onclick="if(even) {
+sell(7776, 3125);
+even -= 1;
+update();
+}">Sell an even</button>
+<button onclick="if(ing) {
+sell(46656, 15625);
+ing -= 1;
+update();
+}">Sell an -ing</button>
+<button onclick="if(too) {
+sell(279936, 78125);
+too -= 1;
+update();
+}">Sell a too</button>
+<button onclick="if(way) {
+sell(1679616, 390625);
+way -= 1;
+update();
+}">Sell a way</button>
+
+<tbr/>
+<button id="button" onclick="number += 1;
+
+if (number % 390625 == 0) {
+way += 1;
+too -= 4;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 78125 == 0) {
+too += 1;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 15625 == 0) {
+ing += 1;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 3125 == 0) {
+even += 1;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 625 == 0) {
+more += 1;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 125 == 0) {
+extremely += 1;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 25 == 0) {
+very += 1;
+est -= 4;
+er -= 4;
+
+} else if (number % 5 == 0) {
+est += 1;
+er -= 4;
+
+} else {
+er += 1;
+}
+
+update();">Boring button</button>
+
+<br><br>
+<img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
+<button onclick="if(money >= 12 * ac + 12) {
+money -= 12 * ac + 12;
+ac += 1;
+this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * ac + 12) + ')'
+document.getElementById('ac').innerText = 'You have: ' + ac;
+m();
+}">Buy an autoclicker (Cost: 12)</button>
+
+<button onclick="if(money >= Math.round(120 * 1.75 ** (acs - 1))) {
+money -= Math.round(120 * 1.75 ** (acs - 1));
+acs += 1;
+clearInterval(acint);
+
+acint = setInterval(function(){let i = 0;
+while (i < ac) {
+document.getElementById('button').click();
+i++;
+}}, 1000 / acs);
+
+this.innerText = '+1 CPS (Cost: ' + Math.round(120 * 1.75 ** (acs - 1)) + ')'
+document.getElementById('acs').innerText = 'Current CPS per autoclicker: ' + acs;
+m();
+}">+1 CPS (Cost: 120)</button>
+<p id="ac">You have: 0</p>
+<p id="acs">Current CPS per autoclicker: 1</p>
+
+<img src="https://greensofa24.github.io/Cursors/link.png" width=50>
+<button onclick="if(money >= 15625 * al * al) {
+money -= 15625 * al * al;
+al += 1;
+this.innerText = 'Buy an autolinker (Cost: ' + f(15625 * al * al) + ')'
+document.getElementById('al').innerText = 'You have: ' + (al - 1);
+m();
+}">Buy an autolinker (Cost: 15.63K)</button>
+
+<button onclick="if(money >= 120 * 3 ** als) {
+money -= 120 * 3 ** als;
+als += 0.01;
+clearInterval(alint);
+
+alint = setInterval(function(){let i = 0;
+while (i < al) {
+document.getElementById('button').click();
+i++;
+}}, 1000 / als);
+
+this.innerText = '+1 LPS (Cost: ' + f(1679616 * 3 ** als) + ')'
+document.getElementById('als').innerText = 'Current LPS per autolinker: ' + als;
+m();
+}">+0.01 LPS (Cost: 1.68M)</button>
+<p id="al">You have: 0</p>
+<p id="als">Current LPS: 0</p>
+
+</body>
+</html>
