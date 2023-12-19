@@ -37,10 +37,11 @@ i++;
 }}, 1000 / acs);
 
 var alint = setInterval(function(){let i = 0;
-while (i < al) {
+while (i < als) {
 al += als;
+document.getElementById('al').innerText = 'You have: ' + rd(al - 1);
 i++;
-}}, 1000 / als);
+}}, 1000);
 
 function rd(n) {
 var s = String(n);
@@ -293,7 +294,7 @@ update();">Boring button</button>
 <button onclick="if(money >= 12 * ac + 12) {
 money -= 12 * ac + 12;
 ac += 1;
-this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * ac + 12) + ')'
+this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * ac + 12) + ')';
 document.getElementById('ac').innerText = 'You have: ' + ac;
 m();
 }">Buy an autoclicker (Cost: 12)</button>
@@ -309,7 +310,7 @@ document.getElementById('button').click();
 i++;
 }}, 1000 / acs);
 
-this.innerText = '+1 CPS (Cost: ' + Math.round(120 * 1.75 ** (acs - 1)) + ')'
+this.innerText = '+1 CPS (Cost: ' + f(Math.round(120 * 1.75 ** (acs - 1))) + ')';
 document.getElementById('acs').innerText = 'Current CPS per autoclicker: ' + acs;
 m();
 }">+1 CPS (Cost: 120)</button>
@@ -320,24 +321,25 @@ m();
 <button onclick="if(money >= 15625 * al * al) {
 money -= 15625 * al * al;
 al += 1;
-this.innerText = 'Buy an autolinker (Cost: ' + f(15625 * al * al) + ')'
+this.innerText = 'Buy an autolinker (Cost: ' + f(15625 * al * al) + ')';
 document.getElementById('al').innerText = 'You have: ' + (al - 1);
 m();
 }">Buy an autolinker (Cost: 15.63K)</button>
 
-<button onclick="if(money >= 120 * 3 ** als) {
-money -= 120 * 3 ** als;
+<button onclick="if(money >= 1679616 * 3 ** als) {
+money -= 1679616 * 3 ** als;
 als += 0.01;
 clearInterval(alint);
 
 alint = setInterval(function(){let i = 0;
-while (i < al) {
-document.getElementById('button').click();
+while (i < als) {
+al += als;
+document.getElementById('al').innerText = 'You have: ' + rd(al - 1);
 i++;
-}}, 1000 / als);
+}}, 1000);
 
-this.innerText = '+1 LPS (Cost: ' + f(1679616 * 3 ** als) + ')'
-document.getElementById('als').innerText = 'Current LPS per autolinker: ' + als;
+this.innerText = '+0.01 LPS (Cost: ' + f(1679616 * 3 ** als) + ')';
+document.getElementById('als').innerText = 'Current LPS: ' + als;
 m();
 }">+0.01 LPS (Cost: 1.68M)</button>
 <p id="al">You have: 0</p>
