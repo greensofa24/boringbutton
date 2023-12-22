@@ -16,6 +16,7 @@ margin-top: 7.5px;
 <script>
 var money = 0;
 var number = 0;
+
 var er = 0;
 var est = 0;
 var very = 0;
@@ -25,13 +26,18 @@ var even = 0;
 var ing = 0;
 var too = 0;
 var way = 0;
+var or = 0;
+
 var ac = 0;
 var acs = 1;
 var al = 1;
 var als = 0;
+var at = 0;
+var ats = 0;
+var act = 0;
 
 var acint = setInterval(function(){let i = 0;
-while (i < ac * al) {
+while (i < (ac + act) * al) {
 document.getElementById('button').click();
 i++;
 }}, 1000 / acs);
@@ -42,6 +48,12 @@ al += als;
 document.getElementById('al').innerText = 'You have: ' + rd(al - 1);
 i++;
 }}, 1000);
+
+var atint = setInterval(function(){let i = 0;
+act += at;
+document.getElementById('ac').innerText = 'You have: ' + ac + act;
+i++;
+}, 1000);
 
 function rd(n) {
 var s = String(n);
@@ -70,6 +82,15 @@ function update() {
 document.getElementById("button").innerText = "";
 
 let i = 0;
+while (i < or) {
+a = document.createElement("span");
+a.innerText = "or ";
+a.style.color = "#ff00bf";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
 while (i < way) {
 a = document.createElement("span");
 a.innerText = "way ";
@@ -219,12 +240,29 @@ sell(1679616, 390625);
 way -= 1;
 update();
 }">Sell a way</button>
+<button onclick="if(or) {
+sell(10077696, 1953125);
+or -= 1;
+update();
+}">Sell a or</button>
 
 <tbr/>
-<button id="button" onclick="number += 1;
+<button id="button" onclick="number ++;
 
-if (number % 390625 == 0) {
-way += 1;
+if (number % 1953125 == 0) {
+or ++;
+way -= 4;
+too -= 4;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 390625 == 0) {
+way ++;
 too -= 4;
 ing -= 4;
 even -= 4;
@@ -235,7 +273,7 @@ est -= 4;
 er -= 4;
 
 } else if (number % 78125 == 0) {
-too += 1;
+too ++;
 ing -= 4;
 even -= 4;
 more -= 4;
@@ -245,7 +283,7 @@ est -= 4;
 er -= 4;
 
 } else if (number % 15625 == 0) {
-ing += 1;
+ing ++;
 even -= 4;
 more -= 4;
 extremely -= 4;
@@ -254,7 +292,7 @@ est -= 4;
 er -= 4;
 
 } else if (number % 3125 == 0) {
-even += 1;
+even ++;
 more -= 4;
 extremely -= 4;
 very -= 4;
@@ -262,29 +300,29 @@ est -= 4;
 er -= 4;
 
 } else if (number % 625 == 0) {
-more += 1;
+more ++;
 extremely -= 4;
 very -= 4;
 est -= 4;
 er -= 4;
 
 } else if (number % 125 == 0) {
-extremely += 1;
+extremely ++;
 very -= 4;
 est -= 4;
 er -= 4;
 
 } else if (number % 25 == 0) {
-very += 1;
+very ++;
 est -= 4;
 er -= 4;
 
 } else if (number % 5 == 0) {
-est += 1;
+est ++;
 er -= 4;
 
 } else {
-er += 1;
+er ++;
 }
 
 update();">Boring button</button>
@@ -293,7 +331,7 @@ update();">Boring button</button>
 <img src="https://cdn-icons-png.flaticon.com/512/2087/2087818.png" width=40>
 <button onclick="if(money >= 12 * ac + 12) {
 money -= 12 * ac + 12;
-ac += 1;
+ac ++;
 this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * ac + 12) + ')';
 document.getElementById('ac').innerText = 'You have: ' + ac;
 m();
@@ -301,7 +339,7 @@ m();
 
 <button onclick="if(money >= Math.round(120 * 1.75 ** (acs - 1))) {
 money -= Math.round(120 * 1.75 ** (acs - 1));
-acs += 1;
+acs ++;
 clearInterval(acint);
 
 acint = setInterval(function(){let i = 0;
@@ -320,7 +358,7 @@ m();
 <img src="https://greensofa24.github.io/Cursors/link.png" width=50>
 <button onclick="if(money >= 15625 * al * al) {
 money -= 15625 * al * al;
-al += 1;
+al ++;
 this.innerText = 'Buy an autolinker (Cost: ' + f(15625 * al * al) + ')';
 document.getElementById('al').innerText = 'You have: ' + (al - 1);
 m();
@@ -344,6 +382,33 @@ m();
 }">+0.01 LPS (Cost: 1.68M)</button>
 <p id="al">You have: 0</p>
 <p id="als">Current LPS: 0</p>
+
+<img src="https://static.thenounproject.com/png/317376-200.png" width=40 height=60>
+<button onclick="if(money >= 12 * at + 12) {
+money -= 12 * at + 12;
+at ++;
+this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * at + 12) + ')';
+document.getElementById('at').innerText = 'You have: ' + at;
+m();
+}">Buy an autotyper (Cost: 12)</button>
+
+<!--<button onclick="if(money >= Math.round(120 * 1.75 ** (ats - 1))) {
+money -= Math.round(120 * 1.75 ** (ats - 1));
+ats ++;
+clearInterval(atint);
+
+atint = setInterval(function(){let i = 0;
+while (i < at) {
+document.getElementById('button').click();
+i++;
+}}, 1000 / ats);
+
+this.innerText = '+1 WPM (Cost: ' + f(Math.round(120 * 1.75 ** (ats - 1))) + ')';
+document.getElementById('ats').innerText = 'Current WPM per autoclicker: ' + ats;
+m();
+}">+1 WPM (Cost: 120)</button>-->
+<p id="at">You have: 0</p>
+<!--<p id="ats">Current WPM per autoclicker: 1</p>-->
 
 </body>
 </html>
