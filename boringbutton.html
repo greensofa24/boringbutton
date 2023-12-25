@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <title>Boring Button</title>
 <style>
+body {
+font-family: 'Comic Sans MS', 'Comic Sans';
+font-size: 87.5%
+}
+
+button {
+font-family: inherit;
+font-size: 85%;
+}
+
 tbr {
 display: block;
 margin-top: 7.5px;
@@ -27,6 +37,8 @@ var ing = 0;
 var too = 0;
 var way = 0;
 var or = 0;
+var superr = 0;
+var duper = 0;
 
 var ac = 0;
 var acs = 1;
@@ -51,7 +63,7 @@ i++;
 
 var atint = setInterval(function(){let i = 0;
 act += at;
-document.getElementById('ac').innerText = 'You have: ' + ac + act;
+document.getElementById('ac').innerText = 'You have: ' + (ac + act);
 i++;
 }, 1000);
 
@@ -68,13 +80,23 @@ if (n >= 1e3 && n < 1e6) return rd(n / 1e3) + "K";
 if (n >= 1e6 && n < 1e9) return rd(n / 1e6) + "M";
 if (n >= 1e9 && n < 1e12) return rd(n / 1e9) + "B";
 if (n >= 1e12 && n < 1e15) return rd(n / 1e12) + "T";
-if (n >= 1e15 && n < 1e18) return rd(n / 1e15) + "Qa";
-if (n >= 1e18 && n < 1e21) return rd(n / 1e18) + "Qu";
-if (n >= 1e21 && n < 1e24) return rd(n / 1e21) + "Sx";
-if (n >= 1e24 && n < 1e27) return rd(n / 1e24) + "Sp";
+if (n >= 1e15 && n < 1e18) return rd(n / 1e15) + "q";
+if (n >= 1e18 && n < 1e21) return rd(n / 1e18) + "Q";
+if (n >= 1e21 && n < 1e24) return rd(n / 1e21) + "s";
+if (n >= 1e24 && n < 1e27) return rd(n / 1e24) + "S";
 if (n >= 1e27 && n < 1e30) return rd(n / 1e27) + "O";
 if (n >= 1e30 && n < 1e33) return rd(n / 1e30) + "N";
 if (n >= 1e33 && n < 1e36) return rd(n / 1e33) + "D";
+if (n >= 1e36 && n < 1e39) return rd(n / 1e36) + "UD";
+if (n >= 1e39 && n < 1e42) return rd(n / 1e39) + "DD";
+if (n >= 1e42 && n < 1e45) return rd(n / 1e42) + "TD";
+if (n >= 1e45 && n < 1e48) return rd(n / 1e45) + "qD";
+if (n >= 1e48 && n < 1e51) return rd(n / 1e48) + "QD";
+if (n >= 1e51 && n < 1e54) return rd(n / 1e51) + "sD";
+if (n >= 1e54 && n < 1e57) return rd(n / 1e54) + "SD";
+if (n >= 1e57 && n < 1e60) return rd(n / 1e57) + "OD";
+if (n >= 1e60 && n < 1e63) return rd(n / 1e60) + "ND";
+if (n >= 1e63 && n < 1e66) return rd(n / 1e63) + "V";
 return n;
 };
 
@@ -82,10 +104,19 @@ function update() {
 document.getElementById("button").innerText = "";
 
 let i = 0;
-while (i < or) {
+while (i < superr) {
 a = document.createElement("span");
-a.innerText = "or ";
-a.style.color = "#ff00bf";
+a.innerText = "super ";
+a.style.color = "#800000";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
+i = 0;
+while (i < duper) {
+a = document.createElement("span");
+a.innerText = "duper ";
+a.style.color = "#804000";
 document.getElementById("button").appendChild(a);
 i++;
 }
@@ -145,7 +176,26 @@ i++;
 }
 
 a = document.createElement("span");
-a.innerText = "boring";
+a.innerText = "bor";
+document.getElementById("button").appendChild(a);
+
+i = 0;
+while (i < or) {
+a = document.createElement("span");
+a.innerText = "-or";
+a.style.color = "#ff00bf";
+document.getElementById("button").appendChild(a);
+if (or - i == 1) {
+a = document.createElement("span");
+a.innerText = "-";
+a.style.color = "#ff00bf";
+document.getElementById("button").appendChild(a);
+}
+i++;
+}
+
+a = document.createElement("span");
+a.innerText = "ing";
 document.getElementById("button").appendChild(a);
 
 i = 0;
@@ -249,7 +299,34 @@ update();
 <tbr/>
 <button id="button" onclick="number ++;
 
-if (number % 1953125 == 0) {
+if (number % 48828125 == 0) {
+duper ++;
+superr -= 4;
+or -= 4;
+way -= 4;
+too -= 4;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 9765625 == 0) {
+superr ++;
+or -= 4;
+way -= 4;
+too -= 4;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 1953125 == 0) {
 or ++;
 way -= 4;
 too -= 4;
@@ -364,8 +441,8 @@ document.getElementById('al').innerText = 'You have: ' + (al - 1);
 m();
 }">Buy an autolinker (Cost: 15.63K)</button>
 
-<button onclick="if(money >= 1679616 * 3 ** als) {
-money -= 1679616 * 3 ** als;
+<button onclick="if(money >= 1679616 * 3 ** (als * 10)) {
+money -= 1679616 * 3 ** (als * 10);
 als += 0.01;
 clearInterval(alint);
 
@@ -376,7 +453,7 @@ document.getElementById('al').innerText = 'You have: ' + rd(al - 1);
 i++;
 }}, 1000);
 
-this.innerText = '+0.01 LPS (Cost: ' + f(1679616 * 3 ** als) + ')';
+this.innerText = '+0.01 LPS (Cost: ' + f(1679616 * 3 ** (als * 10)) + ')';
 document.getElementById('als').innerText = 'Current LPS: ' + als;
 m();
 }">+0.01 LPS (Cost: 1.68M)</button>
