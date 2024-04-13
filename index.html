@@ -39,6 +39,7 @@ var way = 0;
 var or = 0;
 var superr = 0;
 var duper = 0;
+var aer = 0;
 
 var ac = 0;
 var acs = 1;
@@ -225,6 +226,15 @@ document.getElementById("button").appendChild(a);
 i++;
 }
 
+i = 0;
+while (i < aer) {
+a = document.createElement("span");
+a.innerText = "-aer";
+a.style.color = "#800000";
+document.getElementById("button").appendChild(a);
+i++;
+}
+
 document.getElementById("button").firstChild.innerText = 
 document.getElementById("button").firstChild.innerText.charAt(0).toUpperCase() + document.getElementById("button").firstChild.innerText.slice(1);
 
@@ -305,11 +315,31 @@ sell(362797056, 48828125);
 duper -= 1;
 update();
 }">Sell a duper</button>
+<button onclick="if(aer) {
+sell(2176782336, 244140625);
+aer -= 1;
+update();
+}">Sell a duper</button>
 
 <tbr/>
 <button id="button" onclick="number ++;
 
-if (number % 48828125 == 0) {
+if (number % 244140625 == 0) {
+aer ++;
+duper -= 4;
+superr -= 4;
+or -= 4;
+way -= 4;
+too -= 4;
+ing -= 4;
+even -= 4;
+more -= 4;
+extremely -= 4;
+very -= 4;
+est -= 4;
+er -= 4;
+
+} else if (number % 48828125 == 0) {
 duper ++;
 superr -= 4;
 or -= 4;
@@ -451,9 +481,9 @@ document.getElementById('al').innerText = 'You have: ' + (al - 1);
 m();
 }">Buy an autolinker (Cost: 15.63K)</button>
 
-<button onclick="if(money >= 1679616 * 3 ** (als * 10)) {
-money -= 1679616 * 3 ** (als * 10);
-als += 0.01;
+<button onclick="if(money >= 1679616 * 2 ** (als * 10)) {
+money -= 1679616 * 2 ** (als * 10);
+als += 0.05;
 clearInterval(alint);
 
 alint = setInterval(function(){let i = 0;
@@ -463,21 +493,21 @@ document.getElementById('al').innerText = 'You have: ' + rd(al - 1);
 i++;
 }}, 1000);
 
-this.innerText = '+0.01 LPS (Cost: ' + f(1679616 * 3 ** (als * 10)) + ')';
+this.innerText = '+0.05 LPS (Cost: ' + f(1679616 * 2 ** (als * 10)) + ')';
 document.getElementById('als').innerText = 'Current LPS: ' + als;
 m();
-}">+0.01 LPS (Cost: 1.68M)</button>
+}">+0.05 LPS (Cost: 1.68M)</button>
 <p id="al">You have: 0</p>
 <p id="als">Current LPS: 0</p>
 
 <img src="https://static.thenounproject.com/png/317376-200.png" width=40 height=60>
-<button onclick="if(money >= 12 * at + 12) {
-money -= 12 * at + 12;
+<button onclick="if(money >= 78125 * at * at) {
+money -= 78125 * at * at;
 at ++;
-this.innerText = 'Buy an autoclicker (Cost: ' + f(12 * at + 12) + ')';
+this.innerText = 'Buy an autoclicker (Cost: ' + f(78125 * at * at) + ')';
 document.getElementById('at').innerText = 'You have: ' + at;
 m();
-}">Buy an autotyper (Cost: 12)</button>
+}">Buy an autotyper (Cost: 78.12K)</button>
 
 <!--<button onclick="if(money >= Math.round(120 * 1.75 ** (ats - 1))) {
 money -= Math.round(120 * 1.75 ** (ats - 1));
